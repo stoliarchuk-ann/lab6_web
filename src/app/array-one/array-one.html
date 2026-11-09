@@ -1,0 +1,25 @@
+<div class = "flex">
+    <div class = "content" style = "text-align: center;">
+        <h2>Завдання 1: одномірні масиви</h2>
+        <p>
+            Дані про температуру води на Чорноморському узбережжі за декаду вересня зберігаються в масиві. Визначити, скільки за цей час було днів, придатних для купання.
+        </p>
+
+        <div class = "input-wrapper">
+            <input #daysInput type = "number" placeholder = "Введіть кількість днів (10)">
+            <button class = "btn" (click) = "calculate(daysInput.value)">Розрахунок</button>
+        </div>
+    </div>
+
+    <div class = "content" style = "text-align: center;">
+        <h3>Температура води (°С):</h3>
+        <div class = "flex-row flex-wrap" style = "justify-content: center; margin: 15px 0;">
+            <span *ngFor = "let temp of arrayOne.a; let i = index" style = "background: #f1f3f5; padding: 6px 12px; border-radius: 6px; font-size: 14px;">
+                День {{i+1}}: <strong>{{temp}}°C</strong>
+            </span>
+        </div>
+    
+        <h3>Результати обрахунків</h3>
+        <p>Кількість днів, придатних для купання (температура вища за 22°C): <strong>{{arrayOne.count}}</strong></p>
+    </div>
+</div>

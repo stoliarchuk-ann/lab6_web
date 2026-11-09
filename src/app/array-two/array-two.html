@@ -1,0 +1,28 @@
+<div class = "flex">
+    <div class = "content" style = "text-align: center;">
+        <h2>Завдання 2: двовимірні масиви</h2>
+        <p>
+            Згенерувати двовимірний масив (матрицю). Обчислити суму елементів, що знаходяться вище головної діагоналі.
+        </p>
+
+        <div class = "input-wrapper">
+            <input #matrixInput type = "number" placeholder = "Введіть розмір (наприклад 5)">
+            <button class = "btn" (click) = "calculate(matrixInput.value)">Розрахунок</button>
+        </div>
+    </div>
+
+    <div class = "content" style = "text-align: center;">
+        <h3>Згенерована матриця:</h3>
+    
+        <div style = "margin: 20px 0; display: inline-block;">
+            <div *ngFor = "let row of arrayTwo.a" class = "flex-row" style="justify-content: center; margin-bottom: 8px;">
+                <span *ngFor = "let item of row" style = "background: #f1f3f5; padding: 8px 10px; border-radius: 6px; font-size: 15px; width: 40px; text-align: center; display: inline-block;">
+                    {{item}}
+                </span>
+            </div>
+        </div>
+    
+        <h3>Результати обрахунків</h3>
+        <p>Сума елементів вище головної діагоналі: <strong>{{arrayTwo.sum}}</strong></p>
+    </div>
+</div>

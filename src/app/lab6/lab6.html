@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<section class = "flex">
+    <div class = "content">
+    <h2>Завдання</h2>
+    <p>
+        Базовий клас: квадрат (поля - назва, сторона). Метод: площа квадрата.<br>
+        Нащадок: прямокутник (поле - різниця між довжинами сторін). Зміни в нащадку: змінити обчислення площі фігури.
+    </p>
+    </div>
+</section>
+<section class = "flex">
+    <form class = "flex flex-row flex-wrap">
+        <fieldset class = "flex flex-column">
+            <legend>Квадрат</legend>
+            <input type = "text" value = "square" id = "name1" min = "0" placeholder = "Name" #name1 />
+            <input type = "number" value = "5" id = "a1" min = "0" placeholder = "A" #a1 /> 
+        </fieldset>
+
+        <fieldset class = "flex flex-column">
+            <legend>Прямокутник</legend>
+            <input type = "text" value = "rectangle" id = "name2" min = "0" placeholder = "Name" #name2 />
+            <input type = "number" value = "5" id = "a2" min = "0" placeholder = "A" #a2 />
+            <input type = "number" value = "5" id = "diff" min = "0" placeholder = "Difference" #diff />
+        </fieldset>
+
+        <button type = "button" (click) = "calcRectangles(a1.value, a2.value, diff.value, name1.value, name2.value)">
+            Розрахувати площу
+        </button>
+    </form>
+</section>
+
+<section class = "flex" *ngIf="square_show">
+    <div class = "content">
+        <p>{{ square_show }}</p>
+        <p>{{ rectangle_show }}</p>
+    </div>
+</section>
